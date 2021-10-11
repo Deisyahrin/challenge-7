@@ -1,0 +1,45 @@
+Hai, <%= user.username %>!
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <% if (messages.error) { %>
+                    <h5>
+                        <%= messages.error %>
+                    </h5>
+                    <% } %>
+                    <form method="POST" action="/game/create-room">
+                        <main class="form-signin">
+                            <form method="POST" action="/login">
+                                <%- include("../partials/head"); %>
+                                <img class="mb-4" src="/images/Login/1147.png" alt="" width="72" height="72">
+                                <h1 class="h3 mb-3 fw-normal">Create room</h1>
+
+                                <div class="form-floating">
+                                    <br>
+                                    <input type="text" name="nama_room" class="form-control" id="floatingInput" placeholder="Insert your room name">
+                                    <br>
+                                    <label for="floatingInput">Name room</label>
+                                </div>
+                                <div class="form-floating">
+                                    <br>
+                                    <input type="hidden" name="id_player_1" class="form-control" id="floatingInput" value="<%= user.id %>">
+                                    <br>
+                                </div>
+                                <button type="submit">Submit</button>
+
+
+
+                            </form>
+                        </main>
+                    </form>
+            </div>
+        </div>
+        <div class="row">
+
+        </div>
+    </div>
+</body>
+
+</html>
+

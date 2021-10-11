@@ -1,0 +1,198 @@
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='./../stylesheets/style-game-suit.css'>
+</head>
+
+<body>
+
+
+    <div class="row">
+        <div class="col d-flex align-items-center flex-column">
+            <p class="selection-desc p-4">Player 1
+            </p>
+            <div>
+                <div class="p-4 m-4 selections" id="player-rock">
+                    <img class="selection-batu" src="./../images/img-game-suit/batu.png" alt="batu">
+                </div>
+                <div class="p-4 m-4 selections" id="player-paper">
+                    <img class="selection-kertas" src="./../images/img-game-suit/kertas.png" alt="kertas">
+                </div>
+                <div class="p-4 m-4 selections" id="player-scissor">
+                    <img class=" selection-gunting" src="./../images/img-game-suit/gunting.png" alt="gunting">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col d-flex justify-content-center">
+                <div class="p-4 m-4 selections"><img class="selection-refresh"
+                        src="./../images/img-game-suit/refresh.png" alt="refresh" id="reset""></div>
+</div>
+</div>
+
+<script src=" https://unpkg.com/axios/dist/axios.min.js"></script>
+                    <script>
+                        class Game {
+                            constructor() { }
+
+                            // randomize() {
+                            // 	const choices = [ 'rock', 'paper', 'scissor' ];
+                            // 	const index = Math.floor(Math.random() * 2.9);
+                            // 	return choices[index];
+                            // }
+
+                            playGame(playerChoice) {
+                                this.resetBackground();
+
+                                console.log(`Player memilih ${playerChoice}`);
+                                this.setBackground('player', playerChoice);
+                                let pilihan = null
+                                if (playerChoice === 'scissor') {
+                                    console.log(playerChoice)
+                                    alert(0)
+                                    pilihan = 0
+                                }
+                                if (playerChoice === 'rock') {
+                                    console.log(playerChoice)
+                                    alert(1)
+                                    pilihan = 1
+                                }
+                                if (playerChoice === 'paper') {
+                                    console.log(playerChoice)
+                                    alert(2)
+                                    pilihan = 2
+                                }
+
+                                var data = JSON.stringify({
+                                    "room_id": 4,
+                                    "pilihan_tangan": pilihan
+                                });
+
+                                var config = {
+                                    method: 'post',
+                                    url: 'http://localhost:3000/game/fight-player-2',
+                                    headers: {
+                                        'Content-Type': 'application/json',
+                                        'Cookie': 'connect.sid=s%3AYpobOoaxEyMYN8VALYgYn22lmExcpq4X.UrPJRMAgjMSL4W78prKzCI4lxY2uxCGI4PktGvfWKGw'
+                                    },
+                                    data: data
+                                };
+
+                                axios(config)
+                                    .then(function (response) {
+                                        console.log(JSON.stringify(response.data));
+                                    })
+                                    .catch(function (error) {
+                                        console.log(error);
+                                    });
+                                // const comChoice = this.randomize();
+                                // console.log(`COM memilih ${comChoice}`);
+                                // this.setBackground('com', comChoice);
+
+                                // if (playerChoice == comChoice) {
+                                // return this.resultDraw();
+                                // }
+
+                                // if (
+                                // (playerChoice === 'rock' && comChoice === 'paper') ||
+                                // (playerChoice === 'paper' && comChoice === 'scissor') ||
+                                // (playerChoice === 'scissor' && comChoice === 'rock')
+                                // ) {
+                                // return this.resultPlayerLose();
+                                // }
+
+                                // if (
+                                // (playerChoice === 'rock' && comChoice === 'scissor') ||
+                                // (playerChoice === 'paper' && comChoice === 'rock') ||
+                                // (playerChoice === 'scissor' && comChoice === 'paper')
+                                // ) {
+                                // return this.resultPlayerWin();
+                                // }
+                            }
+
+                            setBackground(playerType, choice) {
+                                const selectedElement = document.getElementById(`${playerType}-${choice}`);
+                                selectedElement.classList.add('custom-selected');
+                            }
+
+                            resetBackground() {
+                                document.getElementById('player-rock').classList.remove('custom-selected');
+                                document.getElementById('player-paper').classList.remove('custom-selected');
+                                document.getElementById('player-scissor').classList.remove('custom-selected');
+                                // document.getElementById('com-rock').classList.remove('custom-selected');
+                                // document.getElementById('com-paper').classList.remove('custom-selected');
+                                // document.getElementById('com-scissor').classList.remove('custom-selected');
+
+                                // document.getElementById('vs').classList.remove('result-win');
+                                // document.getElementById('vs').classList.remove('result-draw');
+
+                                // document.getElementById('vs').innerHTML = 'VS';
+                                // document.getElementById('vs').classList.add('versus');
+                            }
+
+                            // resultDraw() {
+                            // console.log('DRAW');
+
+                            // const vsElement = document.getElementById('vs');
+                            // vsElement.innerHTML = 'DRAW';
+
+                            // vsElement.classList.remove('versus');
+                            // vsElement.classList.add('result-draw');
+                            // }
+
+                            // resultPlayerLose() {
+                            // console.log('COM WIN');
+
+                            // const vsElement = document.getElementById('vs');
+                            // vsElement.innerHTML = 'COM WIN';
+
+                            // vsElement.classList.remove('versus');
+                            // vsElement.classList.add('result-win');
+                            // }
+
+                            // resultPlayerWin() {
+                            // console.log('PLAYER WIN');
+
+                            // const vsElement = document.getElementById('vs');
+                            // vsElement.innerHTML = 'PLAYER 1 WIN';
+
+                            // vsElement.classList.remove('versus');
+                            // vsElement.classList.add('result-win');
+                            // }
+                        }
+
+                        const game = new Game();
+
+                        const playerRock = document.getElementById('player-rock');
+                        const playerPaper = document.getElementById('player-paper');
+                        const playerScissor = document.getElementById('player-scissor');
+
+                        // const comRock = document.getElementById('com-rock');
+                        // const comPaper = document.getElementById('com-paper');
+                        // const comScissor = document.getElementById('com-scissor');
+
+                        const versus = document.getElementById('vs');
+
+                        const reset = document.getElementById('reset');
+
+                        playerRock.onclick = function () {
+                            game.playGame('rock');
+                        };
+
+                        playerPaper.onclick = function () {
+                            game.playGame('paper');
+                        };
+
+                        playerScissor.onclick = function () {
+                            game.playGame('scissor');
+                        };
+
+                        reset.onclick = function () {
+                            console.log('--- GAME RESET ---');
+
+                            game.resetBackground();
+                        };
+
+                    </script>
+
+</body>

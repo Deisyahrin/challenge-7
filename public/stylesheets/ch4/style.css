@@ -1,0 +1,373 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain) */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+/* Suwit Jawa 2.0 */
+
+.Tombol *,
+.Hi {
+  text-align: center;
+  font-size: 120%;
+  border-radius: 20%;
+}
+
+.Tombol button {
+  background-color: white;
+}
+
+body {
+  background-image: url(/images/chapter-4/bg.jpg);
+  background-size: cover;
+}
+
+.Judul p {
+  position: absolute;
+  width: 410px;
+  height: 62px;
+  left: 218px;
+  top: 40px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 49px;
+  text-align: center;
+
+  color: #f9b23d;
+}
+
+.logo img {
+  position: absolute;
+  width: 72px;
+  height: 72px;
+  left: 119px;
+  top: 27px;
+}
+
+.LogoLebihKecil {
+  position: absolute;
+  width: 55px;
+  height: 87px;
+  left: 37px;
+  top: 12px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 72px;
+  line-height: 98px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  color: #724c21;
+}
+
+.area-player {
+  position: absolute;
+  width: 128px;
+  height: 92px;
+  left: 382px;
+  top: 207px;
+}
+
+.area-komputer {
+  position: absolute;
+  width: 128px;
+  height: 92px;
+  left: 951px;
+  top: 207px;
+}
+
+.area-player img,
+.area-komputer img {
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin: auto;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.Pemain p {
+  left: 296px;
+}
+
+.Pemain h1 {
+  left: 865px;
+}
+
+.Pemain p,
+.Pemain h1 {
+  position: absolute;
+  width: 299px;
+  height: 94px;
+  top: 162px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 49px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.Button {
+  position: absolute;
+  width: 77px;
+  height: 71px;
+  left: 681px;
+  top: 600px;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  outline: none;
+}
+
+.info {
+  position: absolute;
+  width: 200.11px;
+  height: 130.93px;
+  left: 600px;
+  top: 350.89px;
+  text-align: center;
+  background: #4c9654;
+  border-radius: 10px;
+  transform: rotate(-28.87deg);
+  text-overflow: clip;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 37px;
+  line-height: 60px;
+  color: #ffffff;
+
+  animation-name: down-animation;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes down-animation {
+  /* keadaan awal */
+  0% {
+    left: 600px;
+    top: 360px;
+  }
+  /* keaddan pertengahan */
+  50% {
+    left: 600px;
+    top: 320px;
+  }
+  /* keaddan semula */
+  100% {
+    left: 600px;
+    top: 370px;
+  }
+}
+
+.ss {
+  position: absolute;
+  width: 320px;
+  height: 250px;
+  right: -60px;
+  top: -60px;
+  bottom: 0px;
+  transform: rotate(25.87deg);
+}
+
+@media (max-width: 800px) {
+  .Pemain p {
+    left: 10px;
+    text-align: left;
+    top: 160px;
+    font-size: 25px;
+  }
+
+  .Pemain h1 {
+    left: 380px;
+    top: 160px;
+    font-size: 25px;
+    text-align: left;
+  }
+
+  .area-player {
+    text-align: left;
+    top: 190px;
+    left: 0px;
+  }
+
+  .area-komputer {
+    text-align: left;
+    top: 190px;
+    left: 350px;
+  }
+
+  #batuUser img,
+  #kertasUser img,
+  #guntingUser img,
+  #batuCom img,
+  #kertasCom img,
+  #guntingCom img {
+    top: 0px;
+    width: 70px;
+    height: 60px;
+  }
+  .Button {
+    left: 201px;
+    top: 600px;
+  }
+
+  .info {
+    width: 150.11px;
+    height: 120.93px;
+    text-align: center;
+    left: 100px;
+    background: #4c9654;
+    top: 350.89px;
+
+    font-size: 20px !important;
+    font-size: 37px;
+    line-height: 60px;
+  }
+
+  .ss {
+    width: 150px;
+    height: 150px;
+    right: 310px;
+    top: -300px;
+    bottom: 0px;
+  }
+
+  .Judul p {
+    font-size: 20px;
+    left: 100px;
+    top: 30px;
+  }
+  .LogoLebihKecil {
+    font-size: 40px;
+  }
+  .logo img {
+    left: 100px;
+    width: 60px;
+    height: 60px;
+  }
+}

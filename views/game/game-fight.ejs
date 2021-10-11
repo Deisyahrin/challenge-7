@@ -1,0 +1,23 @@
+<% if (room_name==undefined) { %>
+    <form method="POST" action="/game/game-fight">
+        <label for="kode_room">Unique code</label>
+        <br>
+        <input type="text" name="kode_room" placeholder="Insert your room code">
+        <br>
+        <input type="hidden" name="id_player_2" value="<%= user.id %>">
+        <button type="submit">Join</button>
+    </form>
+    <% } else { %>
+        <%= room_name %>
+            <form method="POST" action="/game/game-fight">
+                <label for="kode_room">Code Room</label>
+                <br>
+                <input type="text" name="kode_room" placeholder="Insert your room code">
+                <br>
+                <input type="hidden" name="id_user" value="">
+                <button type="submit">Join</button>
+            </form>
+            <% } %>
+
+
+            

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head"); %>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans&display=swap" rel="stylesheet">
+        <link rel='stylesheet' href='./../stylesheets/style-game-suit.css'>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="d-inline-flex align-items-center">
+                <div>
+                    <a class="back-logo p-2" href="/game">
+                        < </a>
+                </div>
+                <div>
+                    <img class="logo p-2" src="./../images/img-game-suit/logo 1.png" alt="logo">
+                </div>
+                <div>
+                    <p class="desc-logo m-1 p-3">rock paper scissors</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col d-flex align-items-center flex-column">
+                <p class="selection-desc p-4">Player 1
+                </p>
+                <div>
+                    <div class="p-4 m-4 selections" id="player-rock">
+                        <img class="selection-batu" src="./../images/img-game-suit/batu.png" alt="batu">
+                    </div>
+                    <div class="p-4 m-4 selections" id="player-paper">
+                        <img class="selection-kertas" src="./../images/img-game-suit/kertas.png" alt="kertas">
+                    </div>
+                    <div class="p-4 m-4 selections" id="player-scissor">
+                        <img class=" selection-gunting" src="./../images/img-game-suit/gunting.png" alt="gunting">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col d-flex justify-content-center">
+                    <div class="p-4 m-4 selections"><img class="selection-refresh"
+                            src="./../images/img-game-suit/refresh.png" alt="refresh" id="reset""></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src=" ./../javascripts/game-suit-engine.js"></script>
+
+</body>
+
+</html>

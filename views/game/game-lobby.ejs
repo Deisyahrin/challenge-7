@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../partials/head"); %>
+</head>
+
+
+        
+   
+        <!DOCTYPE html>
+        <html lang="en">
+        
+        <head>
+            <%- include("../partials/head"); %>
+        </head>
+        
+        
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" class="btn btn-info" href="#">Navbar</a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-mdb-toggle="collapse"
+                data-mdb-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <i class="fas fa-bars"></i>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <a class="nav-link active" aria-current="page" href="/game">Home</button></a>
+                  <a class="nav-link" href="/game/create-room">Create Room</a>
+                  <a class="nav-link" href="/game/game-fight">Join room</a>
+                  <a class="nav-link" href="/profile">Edit</a>
+        
+        
+                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"
+                    >Disabled</a
+                  >
+                  
+                </div>
+              </div>
+            </div>
+          </nav>
+          Hai, <%= user.username %>!
+</html>
